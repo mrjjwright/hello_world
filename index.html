@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Systematic</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+
+      .console,
+      .view {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+
+      .console {
+        background-color: #2d2d2d;
+        font-family: monospace;
+        border-right: 1px solid #ddd;
+      }
+
+      .view {
+        background-color: #e0e0e0;
+      }
+
+      .console textarea {
+        background-color: #2d2d2d;
+        color: #f0f0f0;
+        width: 100%;
+        resize: none;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        border: none;
+        outline: none;
+        overflow: auto;
+      }
+
+      .menu,
+      .rows {
+        font-family: "Courier New", Courier, monospace;
+        color: #f0f0f0;
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: left;
+        width: 100%;
+      }
+
+      .menu-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 20px 0;
+      }
+
+      .menu-option {
+        display: inline;
+        margin-right: 5px;
+      }
+
+      .menu-option .kbd {
+        background-color: #444;
+        padding: 2px 4px;
+        border-radius: 4px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 4px;
+      }
+
+      .line-number {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #444;
+        padding: 2px 4px;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      .cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        padding: 4px;
+        color: #cccccc;
+      }
+
+      .cell :first-child {
+        text-decoration: underline;
+        margin-bottom: 4px;
+      }
+
+      .key,
+      .value {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="console">
+        <textarea rows="1" placeholder=""></textarea>
+        <div class="menu">
+          <hr />
+          <div>MODIFY</div>
+          <div class="menu-options">
+            <span class="menu-option"><kbd class="kbd">a</kbd> Add Line</span>
+            <span class="menu-option"><kbd class="kbd">b</kbd> Add Cell</span>
+            <span class="menu-option"
+              ><kbd class="kbd">c</kbd> Modify Cell</span
+            >
+            <span class="menu-option"><kbd class="kbd">a</kbd> Add Line</span>
+            <span class="menu-option"><kbd class="kbd">b</kbd> Add Cell</span>
+            <span class="menu-option"
+              ><kbd class="kbd">c</kbd> Modify Cell</span
+            >
+          </div>
+          <hr />
+        </div>
+        <div class="rows">
+          <div class="row">
+            <span class="line-number">1</span>
+            <div class="cell">
+              <div class="key">Key1</div>
+              <div class="value">Value1</div>
+            </div>
+            <div class="cell">
+              <div class="key">Key2</div>
+              <div class="value">Value2</div>
+            </div>
+            <div class="cell">
+              <div class="key">Key3</div>
+              <div class="value">Value3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view">
+        <h1>View</h1>
+      </div>
+    </div>
+  </body>
+</html>
